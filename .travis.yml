@@ -1,0 +1,26 @@
+language: node_js
+
+services:
+  - 'docker'
+
+node_js:
+  - '10'
+  - '12'
+
+cache:
+  directories:
+    - 'node_modules'
+
+after_success:
+  - docker build -t nestjs-starter .
+
+before_deploy:
+  - docker login -u "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD" docker.io ;
+  - docker tag nestjs-starter $DOCKER_USERNAME/nestjs-starter:latest
+
+deploy:
+  provider: script
+  script: docker push $DOCKER_USERNAME/nestjs-starter:latest ;
+
+notifications:
+  email: false
