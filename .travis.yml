@@ -11,9 +11,9 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id: '$ACCESS_KEY'
+  access_key_id: $ACCESS_KEY
   secret_access_key:
-    secure: '$SECRET_ACCESS_KEY'
+    secure: $SECRET_ACCESS_KEY
   region: 'ap-southeast-2'
   app: 'hello'
   env: 'hello-env'
