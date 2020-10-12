@@ -6,17 +6,17 @@ services:
 before_install:
   - docker build -t jzhu1224/nestjs-starter .
 
- script:
-    - docker run jzhu1224/nestjs-starter
+script:
+  - docker run jzhu1224/nestjs-starter
 
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAUBZNSC724A2JDVNP
-  secret_access_key: 
+  secret_access_key:
     secure: 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
-  region: "ap-southeast-2"
-  app: "hello"
-  env: "hello-env"
-  bucket_name: "elasticbeanstalk-ap-southeast-2-278731560949"
+  region: 'ap-southeast-2'
+  app: 'hello'
+  env: 'hello-env'
+  bucket_name: 'elasticbeanstalk-ap-southeast-2-278731560949'
   on:
     branch: master
