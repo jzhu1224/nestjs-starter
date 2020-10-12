@@ -4,7 +4,7 @@ services:
   - 'docker'
 
 before_install:
-  - docker build -t jzhu1224/nestjs-starter .
+  - docker build -f dockerfile.dev -t jzhu1224/nestjs-starter .
 
 script:
   - docker run jzhu1224/nestjs-starter
