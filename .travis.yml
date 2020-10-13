@@ -7,7 +7,7 @@ before_install:
   - docker build -t jzhu1224/nestjs-starter .
 
 script:
-  - docker container run --rm -p 80:3000 -it jzhu1224/nestjs-starter
+  - docker run jzhu1224/nestjs-starter
 
 deploy:
   provider: elasticbeanstalk
