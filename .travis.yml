@@ -3,19 +3,19 @@ sudo: required
 services:
   - 'docker'
 
-before_install:
-  - docker build -t jzhu1224/nestjs-starter .
+# before_install:
+#   - docker build -t jzhu1224/nestjs-starter .
 
-script:
-  - docker run jzhu1224/nestjs-starter
+# script:
+#   - docker container run --rm -p 3000:3000 -it jzhu1224/nestjs-starter
 
 deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESS_KEY
   secret_access_key: $SECRET_ACCESS_KEY
   region: 'ap-southeast-2'
-  app: 'hello-docker'
-  env: 'HelloDocker-env'
+  app: 'docker-test'
+  env: 'DockerTest-env'
   bucket_name: 'elasticbeanstalk-ap-southeast-2-278731560949'
   on:
     branch: master
