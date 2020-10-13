@@ -10,7 +10,8 @@
 #   - docker container run --rm -p 3000:3000 -it jzhu1224/nestjs-starter
 language: node_js
 
-node_js: latest
+node_js:
+  - '12'
 
 sudo: required
 
